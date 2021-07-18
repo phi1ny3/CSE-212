@@ -112,3 +112,5 @@ class Golfer:
 How would the queue look like if you were to add Tiger Woods, Phil Mickelson, and Hal Sutton?  How would you manipulate a queue to prioritize position in queue by score?
 
 Here is the [Solution](Sol1.py)
+
+[Back to Home](Python Structures Tutorial.md)
