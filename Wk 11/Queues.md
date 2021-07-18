@@ -21,7 +21,7 @@ As mentioned, enqueue and dequeue are the most common operations to use on a que
 Additionally, there are more advanced forms of container classes resembling queues. There are deques, which work off of both sides, and have functions like extendleft(), extend, popleft(), pop(), etc.  Conceptually, adding or removing the element on the left of a deque is behavior associated with a queue.
 ## IV. Queues in Flowcharts/Program Planning
 Consider an IT service queue, in the simplest terms.  When a customer enters the system, it looks something like this:
-![Queues Example](Queues example.png)
+![Queues Example](Queues_Example.jpg)
 
 Here, we see how customers go in line first, and leave the queue out first as well.
 
@@ -44,7 +44,7 @@ if serviced == ("True"):
     for i in range(2, 0)
         del customer_Queue(i)
         i = i-1
-return;
+return
 ```
 
 ## VI. Problems
