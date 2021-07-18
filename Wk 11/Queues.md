@@ -43,7 +43,63 @@ return;
 ## VI. Problems
 1. Create a queue of numbers from 1-10, enqueueing all numbers.  Dequeue it twice, then enqueue it once.  Dequeue it three times.  What number do you have as the output if you tell it to print the result?
 
-2. Create a queue of a class "Golfer", that keeps track of names and scores.  It could look like this:
+So looking at it, it should look like so:
+```Python
+class Queue:
+	def __init__(self, capacity):
+		self.front = self.size = 0
+		self.rear = capacity -1
+		self.Q = [None]*capacity
+		self.capacity = 10
+	
+	def isEmpty(self):
+		return self.size == 0
+
+	# Function to add an item to the queue.
+	def EnQueue(self, item):
+		if self.isFull():
+			print("Full")
+			return
+		self.rear = (self.rear + 1) % (self.capacity)
+		self.Q[self.rear] = item
+		self.size = self.size + 1
+		print("% s enqueued to queue" % str(item))
+
+	# Function to remove an item from queue.
+	def DeQueue(self):
+		if self.isEmpty():
+			print("Empty")
+			return
+		
+		print("% s dequeued from queue" % str(self.Q[self.front]))
+		self.front = (self.front + 1) % (self.capacity)
+		self.size = self.size -1
+
+#Test/Driver
+	queue = Queue(10)
+	queue.DeQueue()
+    queue.DeQueue()
+	queue.EnQueue()
+	queue.DeQueue()
+    queue.DeQueue()
+    queue.DeQueue()
+
+```
+
+2. Create a Queue class.  It could look something like this to start:
+```Python
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return self.items == []
+
+    def insert(self, item):
+        self.items.append(item)
+```
+
+Create a queue of a class "Golfer", that keeps track of names and scores.  It could look like this:
 ```Python
 class Golfer:
     def __init__(self, name, score):
@@ -55,4 +111,4 @@ class Golfer:
 ```
 How would the queue look like if you were to add Tiger Woods, Phil Mickelson, and Hal Sutton?  How would you manipulate a queue to prioritize position in queue by score?
 
-Here is the [Solution](Sol1.md)
+Here is the [Solution](Sol1.py)
