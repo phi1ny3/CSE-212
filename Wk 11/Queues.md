@@ -8,6 +8,13 @@ Queues are used when we need to process a collection of requests in an orderly w
 ## II. Push/Pop or Enqueue/Dequeue
 You may be familiar with these terms if you're already aware of the stack as a concept as explained earlier.  However, the commands for queues differ, and are called enqueue() (for adding), and dequeue() (for removing).  Dequeue can actually "pop" as well, as long as you are taking from the index 0.
 
+|   Order   |      Enqueue/Dequeue position      |
+| :-----:   | :------------:                     |
+| 1         |1             |1                    |
+| 2         |2             |2                    |
+| 3         |3             |3                    |
+| 4         |4             |4                    |
+
 ## III. Functions/Operations on Queues
 As mentioned, enqueue and dequeue are the most common operations to use on a queue.  However, there are others.  Size() can ascertain the size of a queue, and empty() can determine if the queue is empty.
 
