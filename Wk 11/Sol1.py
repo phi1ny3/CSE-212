@@ -17,7 +17,7 @@ class Queue:
         return item
 
 
-class Golfer:
+class Basketball Player:
     def __init__(self, name, score):
         self.name = name
         self.score= score
@@ -30,13 +30,13 @@ class Golfer:
         if self.score > other.score: return -1
         return 0
 
-tiger = Golfer("Tiger Woods",    61)
-phil  = Golfer("Phil Mickelson", 72)
-hal   = Golfer("Hal Sutton",     69)
+Kawhi = Basketball Player("Kawhi Leonard", 24.8)
+Damian  = Basketball Player("Damian Lillard", 28.8)
+Ethan   = Basketball Player("Ethan Thompson", 15.7)
    
 q = Queue()
-q.insert(tiger)
-q.insert(phil)
-q.insert(hal)
+q.insert(Kawhi)
+q.insert(Damian)
+q.insert(Ethan)
 while not q.is_empty(): 
     print(q.remove())
