@@ -52,7 +52,7 @@ if serviced == ("True"):
 return
 ```
 
-## VI. Problems
+## VI. Testing Example
 1. Create a queue of numbers from 1-10, enqueueing all numbers.  Dequeue it twice, then enqueue it once.  Dequeue it three times.  What number do you have as the output if you tell it to print the result?
 
 So looking at it, it should look like so:
@@ -88,17 +88,18 @@ class Queue:
 		self.size = self.size -1
 
 #Test/Driver
-	queue = Queue(10)
-	queue.DeQueue()
-    queue.DeQueue()
-	queue.EnQueue()
-	queue.DeQueue()
-    queue.DeQueue()
-    queue.DeQueue()
+queue = Queue(10)
+queue.DeQueue()
+queue.DeQueue()
+queue.EnQueue()
+queue.DeQueue()
+queue.DeQueue()
+queue.DeQueue()
 
 ```
+## VII Problem
 
-2. Create a Queue class.  It could look something like this to start:
+1. Create a Queue class.  It could look something like this to start:
 ```Python
 class Queue:
     def __init__(self):
@@ -111,9 +112,9 @@ class Queue:
         self.items.append(item)
 ```
 
-Create a queue of a class "Golfer", that keeps track of names and scores.  It could look like this:
+Create a queue of a class "Basketball Player", that keeps track of names and scores.  It could look like this:
 ```Python
-class Golfer:
+class Basketball Player:
     def __init__(self, name, score):
         self.name = name
         self.score= score
@@ -121,7 +122,7 @@ class Golfer:
     def __str__(self):
         return "%-16s: %d" % (self.name, self.score)
 ```
-How would the queue look like if you were to add Tiger Woods, Phil Mickelson, and Hal Sutton?  How would you manipulate a queue to prioritize position in queue by score?
+How would the queue look like if you were to add Kawhi Leonard, Damian Lillard, and Ethan Thompson?  How would you manipulate a queue to prioritize position in queue by score?
 
 Here is the [Solution](Sol1.py)
 
