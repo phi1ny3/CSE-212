@@ -115,7 +115,7 @@ You may have seen the concept of a queue, and wondered "is there a way to organi
 
 The time complexity for this is O(n log n) for insertion usually, and O(1) for pulling.  There are more efficient forms, but we'll use this one to start.
 
-## VIII Problem
+## VIII Advanced Problem
 
 1. Create a Queue class.  It could look something like this to start:
 ```Python
