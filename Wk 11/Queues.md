@@ -101,8 +101,9 @@ queue.DeQueue()
 
 1. Create a Queue class.  It could look something like this to start:
 ```Python
-class Queue:
-    def __init__(self):
+class PriorityQueue:
+    items=[]
+    def _init_(self):
         self.items = []
 
     def is_empty(self):
@@ -110,9 +111,20 @@ class Queue:
 
     def insert(self, item):
         self.items.append(item)
+
+    def remove(self):
+        maxi = 0
+        for i in range(0, len(self.items)):
+            #comparing scores
+            if self.items[i].score > self.items[maxi].score:
+                maxi = i
+        item = self.items[maxi]
+        #remove function to remove the item from list
+        self.items.remove(item)
+        return item
 ```
 
-Create a queue of a class "Basketball Player", that keeps track of names and scores.  It could look like this:
+Create a queue of a class "Basketball Player", that keeps track of names and scores.  It could look like this to begin with (you'll want to add more like in the PriorityQueue Class):
 ```Python
 class Basketball Player:
     def __init__(self, name, score):
