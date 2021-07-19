@@ -1,5 +1,27 @@
-class Queue:
-    def __init__(self):
+class Basketball_Player:
+    def __init__(self, name, score):
+        self.name = name
+        self.score= score
+
+    def _str_(self):
+        return "%-16s: %d" % (self.name, self.score)
+
+    def _cmp_(self, other):
+        if self.score > other.score: 
+            return  1
+        if self.score < other.score: 
+            return -1
+        return 0
+
+#passing (name,score)
+Kawhi   = Basketball_Player("Kawhi Leonard",24)
+Damian  = Basketball_Player("Damian Lillard",28)
+Ethan   = Basketball_Player("Ethan Thompson",15)
+
+class PriorityQueue:
+    #to use items list we have to declare it here
+    items=[]
+    def _init_(self):
         self.items = []
 
     def is_empty(self):
@@ -10,33 +32,21 @@ class Queue:
 
     def remove(self):
         maxi = 0
-        for i in range(1, len(self.items)):
-            if self.items[i] > self.items[maxi]: maxi = i
+        for i in range(0, len(self.items)):
+            #comparing scores
+            if self.items[i].score > self.items[maxi].score:
+                maxi = i
         item = self.items[maxi]
-        self.items[maxi:maxi+1] = []
+        #remove function to remove the item from list
+        self.items.remove(item)
         return item
 
+q = PriorityQueue()
+q.insert(Kawhi)
+q.insert(Damian)
+q.insert(Ethan)
 
-class Golfer:
-    def __init__(self, name, score):
-        self.name = name
-        self.score= score
-
-    def __str__(self):
-        return "%-16s: %d" % (self.name, self.score)
-
-    def __cmp__(self, other):
-        if self.score < other.score: return  1   # less is more
-        if self.score > other.score: return -1
-        return 0
-
-tiger = Golfer("Tiger Woods",    61)
-phil  = Golfer("Phil Mickelson", 72)
-hal   = Golfer("Hal Sutton",     69)
-   
-q = Queue()
-q.insert(tiger)
-q.insert(phil)
-q.insert(hal)
-while not q.is_empty(): 
-    print(q.remove())
+while not q.is_empty():
+    #using remove
+    player=q.remove()
+    print(player.name, player.score)
