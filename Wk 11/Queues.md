@@ -1,12 +1,12 @@
 # Queues
 ---
 ## I.  Introduction
-So what are queues anyways?  Queues are what are considered "First in, first out", meaning the process of removing an object from the queue will remove it in the order it was queued in to begin with.  Think like a conveyor belt.  This is different from a stack, where like a stack of pancakes, it is much harder to slip a pancake from a stack, so it is "Last In, First Out".
+So what are queues anyways?  Queues are what are considered "First in, first out", meaning the process of removing an object from the queue will remove it in the order it was queued in to begin with.  Think like a conveyor belt.
 
 Queues are used when we need to process a collection of requests in an orderly way.
 
 ## II. Push/Pop or Enqueue/Dequeue
-You may be familiar with these terms if you're already aware of the stack as a concept as explained earlier.  However, the commands for queues differ, and are called enqueue() (for adding), and dequeue() (for removing).  Dequeue can actually "pop" as well, as long as you are taking from the index 0.
+You may be familiar with these terms.  However, the commands for queues differ, and are called enqueue() (for adding), and dequeue() (for removing).  Dequeue can actually "pop" as well, as long as you are taking from the index 0.
 
 |   Order   |      Enqueue/Dequeue position      |
 | :-----:   | :------------:                     |
@@ -33,7 +33,7 @@ All of these basic operations/algorithms within the queue have time complexities
 Consider an IT service queue, in the simplest terms.  When a customer enters the system, it looks something like this:
 
 
-![Queues Example](Queues_Example.jpg)
+![Queues Example](QueuesFlowchart.jpg)
 
 
 
@@ -63,49 +63,37 @@ return
 ```
 
 ## VI. Testing Example
-1. Create a queue of numbers from 1-10, enqueueing all numbers.  Dequeue it twice, then enqueue it once.  Dequeue it three times.  What number do you have as the output if you tell it to print the result?
+1. Here is a good example of a simple Queue program put together:
 
-So looking at it, it should look like so:
 ```Python
 class Queue:
-	def __init__(self, capacity):
-		self.front = self.size = 0
-		self.rear = capacity -1
-		self.Q = [None]*capacity
-		self.capacity = 10
-	
-	def isEmpty(self):
-		return self.size == 0
+    def __init__(self):
+        self.queue = []
 
-	# Function to add an item to the queue.
-	def EnQueue(self, item):
-		if self.isFull():
-			print("Full")
-			return
-		self.rear = (self.rear + 1) % (self.capacity)
-		self.Q[self.rear] = item
-		self.size = self.size + 1
-		print("% s enqueued to queue" % str(item))
+    def enqueue(self, value):
+        self.queue.insert(0, value)
 
-	# Function to remove an item from queue.
-	def DeQueue(self):
-		if self.isEmpty():
-			print("Empty")
-			return
-		
-		print("% s dequeued from queue" % str(self.Q[self.front]))
-		self.front = (self.front + 1) % (self.capacity)
-		self.size = self.size -1
+    def dequeue(self):
 
-#Test/Driver
-queue = Queue(10)
-queue.DeQueue()
-queue.DeQueue()
-queue.EnQueue()
-queue.DeQueue()
-queue.DeQueue()
-queue.DeQueue()
+        value = self.queue[0]
+        del self.queue[0]
+        return value
 
+    def is_empty(self):
+
+        return len(self.queue) == 0
+    
+    def __len__(self):
+
+        return len(self.queue)
+
+    def __str__(self):
+        result = "["
+        for item in self.queue:
+            result += str(item)
+            result += ", "
+        result += "]"
+        return result
 ```
 
 ## VII Priority Queue
