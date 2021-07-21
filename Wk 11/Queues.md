@@ -71,10 +71,9 @@ class Queue:
         self.queue = []
 
     def enqueue(self, value):
-        self.queue.insert(0, value)
+        self.queue.append(value)
 
     def dequeue(self):
-
         value = self.queue[0]
         del self.queue[0]
         return value
