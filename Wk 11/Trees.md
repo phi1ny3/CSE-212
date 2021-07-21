@@ -20,7 +20,7 @@ class BST:
             self.val = key
 ```
 
-A Binary Search Tree (or BST for short) has a hierarchy or set of rules in how its subtrees are ordered.  The right subtree of a node has a key that's greater than its parent node, while the left subtree will have a key that's lesser than its parent node's key.  They also can't have duplicate keys.  Below is an example of one based on simple values:
+A Binary Search Tree (or BST for short) has a hierarchy or set of rules in how its subtrees are ordered.  The right subtree of a node has a key that's greater than its parent node, while the left subtree will have a key that's lesser than or equal to its parent node's key.  They also can't have duplicate keys.  Below is an example of one based on simple values:
 
 ![Example_Tree](Example_Search_Tree.png)
 ---
@@ -46,10 +46,6 @@ Converted to a balanced BST:
   /   / \
  3   6   8
 ```
-<<<<<<< HEAD
-
-=======
->>>>>>> bba4239a666c21f7bc524877be8d2f42285bcc57
 When we balance a BST, we are aiming to get to a time complexity of O(log n).  An unbalanced BST more closely resembles a dynamic array or linked list, and has to wade through more nodes to adjust values via insertion or search, resulting in a O(n) time complexity.
 
 ## III. Functions/Operations on Binary Search Trees
