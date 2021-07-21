@@ -20,7 +20,7 @@ class BST:
             self.val = key
 ```
 
-A Binary Search Tree (or BST for short) has a hierarchy or set of rules in how its subtrees are ordered.  The right subtree of a node has a key that's greater than its parent node, while the left subtree will have a key that's lesser than or equal to its parent node's key.  They also can't have duplicate keys.  Below is an example of one based on simple values:
+A Binary Search Tree (or BST for short) has a hierarchy or set of rules in how its subtrees are ordered.  The right subtree of a node has a key that's greater than its parent node, while the left subtree will have a key that's lesser than its parent node's key.  They also can't have duplicate keys.  Below is an example of one based on simple values:
 
 ![Example_Tree](Example_Search_Tree.png)
 ---
@@ -58,9 +58,9 @@ There are other operations, some similar to other data structures you've learned
 | insert(value)| O(log n) |
 | remove(value)| O(log n) |
 | contains(value)| O(log n) |
-| traverse_forward | O(log n) |
-| traverse_reverse | O(log n) |
-| height(node)    | O(log n) |
+| traverse_forward | O(n) |
+| traverse_reverse | O(n) |
+| height(node)    | O(n) |
 | size()    | O(1) |
 | empty()    | O(1) |
 
