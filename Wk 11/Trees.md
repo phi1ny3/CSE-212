@@ -27,7 +27,7 @@ A Binary Search Tree (or BST for short) has a hierarchy or set of rules in how i
 A Balanced Binary Search Tree is a tree that has been organized with the lowest possible amount of levels possible.
 
 An example of an unbalanced BST:
-`
+```
          8
         /
       6
@@ -37,15 +37,15 @@ An example of an unbalanced BST:
   4
  /
 3
-`
+```
 Converted to a balanced BST:
-`
+```
      5
     / \
    4   7
   /   / \
  3   6   8
-`
+```
 When we balance a BST, we are aiming to get to a time complexity of O(log n).  An unbalanced BST more closely resembles a dynamic array or linked list, and has to wade through more nodes to adjust values via insertion or search, resulting in a O(n) time complexity.
 
 ## III. Functions/Operations on Binary Search Trees
