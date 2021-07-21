@@ -119,6 +119,17 @@ def _traverse_forward(self, node):
 
 ```
 
+for reverse traversal, the syntax will be as follows:
+```Python
+def _traverse_backward(self, node):
+    # Condition is if node has a value
+    if node is not None:
+            # Scours the tree on both sides, recursively calling itself until the if statement can't be met
+            yield from self._traverse_backward(node.right)
+            yield node.data
+            yield from self._traverse_backward(node.left)
+```
+
 You will often need __reversed__ to help with formward traversal.  Here is what that looks like:
 ```Python
     def __reversed__(self):
@@ -144,12 +155,12 @@ class BST:
             self.val = key
 
     def insert(self, data):
-	if self.root is None:
-        # Make the new root
-		self.root = BST.Node(data)
-	else:
-        # Call recursively to start at the root
-		self._insert(data, self.root)
+	    if self.root is None:
+            # Make the new root
+		    self.root = BST.Node(data)
+	    else:
+            # Call recursively to start at the root
+		    self._insert(data, self.root)
 
     def __init__(self):
         self.root = None

@@ -46,6 +46,16 @@ class BST:
             yield from self._traverse_forward(node.left)
             yield node.data
             yield from self._traverse_forward(node.right)
+
+    def _contains(self, data, node):
+        if(node==None):
+            return False
+        elif(node.data==data):
+            return True
+        elif(node.data>data):
+            return _contains(self,data,node.left)
+        else:
+            return _contains(self,data,node.right)
     
     def _traverse_backward(self, node):
         # proceeding only if node is not None
