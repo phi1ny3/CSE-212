@@ -135,7 +135,13 @@ print(i)
 ```
 
 ## VI. Problem
-1. Using what you learned in sets, create two sets, then  remove the items that are not present in both sets:
+1. Using what you learned in sets, create two sets with these values:
+```
+A = {1, 3, 5, 6, 7}
+B = {1, 3, 2}
+```
+
+then  remove the items that are not present in both sets.
 
 2. Calculate hashing for the following to create a hash table, assuming a table of size 16. Use chaining for collision/conflict avoidance:
 {12, 13, 25, 42, 200, 57, 24, 46, 75, 1, 9, 450, 221, 58, 24, 33, 27, 58, 65, 2, 14, 54}
