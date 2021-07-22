@@ -37,8 +37,8 @@ def find_pairs(words):
     for x in L:
         if (x[1],x[0]) in L and (x[1],x[0]) not in symPairs and x[0]!=x[1]:
             symPairs.add(x)
-        if len(symPairs) == 0:
-            print("None")
+    if len(symPairs) == 0:
+        print("None")
         
         # Displaying the symmetric pairs by traversing through set symPairs
         # Takes O(n) time as we have to traverse through the set symPairs

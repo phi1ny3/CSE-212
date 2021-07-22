@@ -43,23 +43,24 @@ Here, we see how customers go in line first, and leave the queue out first as we
 ## V. Example
 Considering the queue above, the implementation of the queue in Python would look something like this:
 ```Python
-customer_Queue = queue()
-#Time to Enqueue
-cust_num = int(input("How many customers are in the system?"))
-for i in range(2, cust_num+1):
-    customer_Queue.append(i)
-    i= i+1
+from queue import Queue  
 
 
-serviced = False
-serviced = bool(input("Was the customer served?"))
-
-if serviced == ("True"):
-    #Dequeuing in action
-    for i in range(2, 0)
-        del customer_Queue(i)
-        i = i-1
-return
+cus_q = Queue()  
+cus_num = int(input(" Enter total customers in the system: "))
+# inserting the customers into queue by numbers as 1,2,3,...cus_num
+for i in range(1, cus_num+1):
+    cus_q.put(i)
+    # loop to check wheather the first customer in queue is served
+    # if customer served the pop him out of queue
+    for i in range (1, cus_num+1):
+        served = False
+        #take input whether cus_q[i] is served or not served
+        served = bool(input("Was the customer served (True/False)? "))
+if served == True:
+# pops the first customer, who's served.
+    cus_q.pop(0)
+    i = i + 1
 ```
 
 ## VI. Testing Example
